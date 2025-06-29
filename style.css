@@ -1,0 +1,732 @@
+/* 폰트 정의 */
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 기본 스타일 */
+body {
+  margin: 0;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+  font-size: 18px;
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+  color: #222;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  transition: background-color 0.5s ease, background 0.5s ease;
+}
+
+html {
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+  transition: background-color 0.5s ease, background 0.5s ease;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+header {
+  background: #006644;
+  color: #fff;
+  padding: 20px 0;
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+nav a:hover {
+  color: #ffe066;
+}
+main {
+  padding: 40px 0;
+}
+section {
+  margin-bottom: 40px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 30px;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #aaa;
+  font-size: 1rem;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid #eee;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+  z-index: 1000;
+}
+
+footer p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 700px) {
+  .container {
+    padding: 0 10px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  section {
+    padding: 20px 10px;
+  }
+  header, footer {
+    padding: 15px 0;
+  }
+  header h1 {
+    font-size: 1.3rem;
+  }
+}
+
+.top-icons {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  gap: 24px;
+  z-index: 10;
+}
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #888;
+  transition: color 0.2s;
+}
+.icon-btn:hover {
+  color: #222;
+}
+.main-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+.side-menu {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: 220px;
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+.side-menu nav ul {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  margin: 0 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.side-menu nav ul li {
+  margin-bottom: 4px !important;
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+.side-menu nav ul li:last-child {
+  margin-bottom: 0;
+}
+.side-menu nav ul li a {
+  color: #222;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+  transition: color 0.2s, text-shadow 0.2s, opacity 0.2s;
+  text-align: left;
+  background: none;
+  box-shadow: none;
+  border: none;
+  opacity: 0.92;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.10);
+  padding: 0 0 0 0;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+  height: auto;
+}
+.side-menu nav ul li a span {
+  font-size: 1.5rem;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.side-menu nav ul li a small {
+  color: #888;
+  opacity: 0.7;
+}
+.side-menu nav ul li a:hover {
+  color: #DC411B;
+  opacity: 1;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+.side-menu nav ul li a.active-indicator {
+  display: none;
+  margin-left: 12px;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 12px solid #DC411B;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+li.active .side-menu nav ul li a.active-indicator {
+  display: inline-block;
+}
+.main-image-section {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.main-image {
+  max-width: 480px;
+  width: 90vw;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  border: none;
+  display: block;
+}
+.hidden-sections {
+  display: none;
+}
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 60vh;
+  }
+  .side-menu {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .side-menu nav ul {
+    align-items: center;
+    margin: 0;
+  }
+  .side-menu nav ul li a {
+    text-align: center;
+  }
+  .main-image-section {
+    width: 100%;
+    justify-content: center;
+  }
+  .main-image {
+    max-width: 90vw;
+  }
+}
+@media (max-width: 600px) {
+  .top-icons {
+    top: 12px;
+    right: 10px;
+    gap: 12px;
+  }
+  .side-menu nav ul li a {
+    font-size: 1.2rem;
+  }
+  .main-image {
+    max-width: 98vw;
+    border-radius: 12px;
+  }
+}
+
+.main-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.floating-menu {
+  position: absolute;
+  left: 6vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+.floating-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: none;
+  position: relative;
+}
+.floating-menu ul li {
+  margin-bottom: 4px !important;
+  background: none;
+  box-shadow: none;
+  border: none;
+  position: relative;
+}
+.floating-menu ul li::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  height: 100%;
+  background: #DC411B;
+  border-radius: 2px;
+  display: block;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);
+}
+.floating-menu ul li.active::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.floating-menu ul li:last-child {
+  margin-bottom: 0;
+}
+.floating-menu ul li a {
+  color: #222;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+  transition: color 0.2s, text-shadow 0.2s, opacity 0.2s;
+  text-align: left;
+  background: none;
+  box-shadow: none;
+  border: none;
+  opacity: 0.92;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.10);
+  padding: 0;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+  height: auto;
+}
+.floating-menu ul li a small {
+  color: #888;
+  opacity: 0.7;
+}
+.floating-menu ul li a:hover {
+  color: #DC411B;
+  opacity: 1;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+.floating-menu ul li a.active-indicator {
+  display: none;
+  margin-left: 12px;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 12px solid #DC411B;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+li.active .floating-menu ul li a.active-indicator {
+  display: inline-block;
+}
+.main-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 480px;
+  width: 90vw;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  border: none;
+  display: block;
+  z-index: 1;
+}
+@media (max-width: 1200px) {
+  .floating-menu {
+    left: 30px;
+    top: 70px;
+    transform: none;
+  }
+  .floating-menu ul {
+    align-items: center;
+  }
+  .floating-menu ul li {
+    margin-bottom: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* 사각형 스타일 숨기기 */
+  .floating-menu ul li::before {
+    display: none !important;
+  }
+  /* 메뉴 텍스트 숨기기 */
+  .floating-menu ul li a strong,
+  .floating-menu ul li a small {
+    display: none;
+  }
+  .floating-menu ul li a {
+    text-align: center;
+    font-size: 1.2rem;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--menu-color, #CCCCCC);
+    color: white;
+    transition: all 0.3s ease;
+    transform: translateX(10px);
+  }
+  .floating-menu ul li a:hover {
+    background-color: #DC411B;
+    width: 30px;
+    height: 30px;
+  }
+  .home-image-img {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    min-width: 100vw;
+    object-fit: cover;
+  }
+}
+@media (max-width: 600px) {
+  .floating-menu {
+    left: 60px;
+    top: 70px;
+    transform: none;
+  }
+  .floating-menu ul {
+    align-items: center;
+  }
+  .floating-menu ul li {
+    margin-bottom: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* 작은 화면에서 사각형 스타일 숨기기 */
+  .floating-menu ul li::before {
+    display: none !important;
+  }
+  .floating-menu ul li a {
+    text-align: center;
+    font-size: 1.2rem;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--menu-color, #CCCCCC);
+    color: white;
+    transition: all 0.3s ease;
+    transform: translateX(10px);
+  }
+  .floating-menu ul li a:hover {
+    background-color: #DC411B;
+    width: 30px;
+    height: 30px;
+  }
+  .main-image {
+    max-width: 98vw;
+    border-radius: 0;
+  }
+  .home-image-img {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    min-width: 100vw;
+    object-fit: cover;
+  }
+}
+
+.floating-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 60px 20px 80px 20px;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.floating-content.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 30px;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.content-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.content-text {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  text-align: left;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
+}
+
+.content-text h2 {
+  color: #2c5530;
+  font-size: 1.9rem;
+  margin: 35px 0 20px 0;
+  border-bottom: 3px solid #32CD32;
+  padding-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+
+.content-text h3 {
+  color: #DC411B;
+  font-size: 1.6rem;
+  margin: 25px 0 0px 0;
+  font-weight: 600;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+  border-top: 1px solid #EBEBEB;
+  padding-top: 15px;
+}
+
+.content-text h4 {
+  color: #DC411B;
+  font-size: 1.2rem;
+  margin: 20px 0 12px 0;
+  font-weight: 600;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+
+.content-text ul {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.content-text li {
+  margin: 8px 0;
+  line-height: 1.7;
+  color: #34495e;
+  position: relative;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+
+.content-text li:before {
+  content: "•";
+  color: #32CD32;
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
+}
+
+.content-text p {
+  margin: 16px 0;
+  line-height: 1.8;
+  color: #34495e;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+
+.content-text strong {
+  color: #2c5530;
+  font-weight: 600;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+
+.content-text img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #888;
+  transition: color 0.2s;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+.close-btn:hover {
+  color: #222;
+}
+
+.home-content {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background: none;
+}
+
+.home-image-img {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  border: none;
+  display: block;
+  max-width: 100vw;
+  min-width: 100vw;
+}
+
+.home-text {
+  font-size: 1.8rem;
+  color: #444;
+  margin-top: 24px;
+  font-weight: 500;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+
+img, .content-image, .content-text img, .home-image-img {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 밸런스 다이어트 표 행 높이 강제 조정 */
+.content-text table th, .content-text table td {
+  padding: 4px 8px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  line-height: 1.2 !important;
+  vertical-align: middle !important;
+  box-sizing: border-box;
+}
+
+/* 밸런스 다이어트 표 td 텍스트 속성 강제 조정 */
+.content-text table td {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  word-break: keep-all !important;
+  display: table-cell !important;
+}
+
+/* 밸런스 다이어트 표 테이블 폭 및 셀 폭 강제 조정 */
+.content-text table {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  table-layout: auto !important;
+}
+.content-text table th, .content-text table td {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  word-break: break-word !important;
+}
+.content-text table td {
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+.top-contact {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  color: #222;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'GowunDodum-Regular', 'Noto Serif KR', Arial, sans-serif;
+}
+
+.phone-icon {
+  font-size: 1.4rem;
+}
+
+.contact-text {
+  color: #222;
+} 
