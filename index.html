@@ -2,60 +2,160 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>아침나라한의원 홈페이지</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Balance 한의원 — 스트레스가 몸에 남긴 것을 푸는 한의원</title>
+  <meta name="description" content="서울 강남 논현동 Dr. Balance 한의원. 점심시간 20분 침 치료, 붙이고 복귀. 목·어깨, 두통, 허리, 한약.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <div class="top-contact">
-    <span class="phone-icon">☎️</span>
-    <span class="contact-text">문의 및 예약 : 02-511-7727</span>
-  </div>
-  <div class="main-section">
-    <nav class="floating-menu">
-      <ul>
-        <li data-menu="home"><a href="#home" class="menu-link" data-content="home"><strong>홈</strong><br><small>처음으로</small></a><span class="active-indicator"></span></li>
-        <li data-menu="yinxu"><a href="#yinxu" class="menu-link" data-content="yinxu"><strong>음정(陰精)회복 플랜</strong><br><small>체질 개선</small></a><span class="active-indicator"></span></li>
-        <li data-menu="disk"><a href="#disk" class="menu-link" data-content="disk"><strong>척추밸런스 케어</strong><br><small>감각밸런스 리셋</small></a><span class="active-indicator"></span></li>
-        <li data-menu="diet"><a href="#diet" class="menu-link" data-content="diet"><strong>밸런스 다이어트</strong><br><small>건강한 체중 관리</small></a><span class="active-indicator"></span></li>
-        <li data-menu="herb"><a href="#herb" class="menu-link" data-content="herb"><strong>한약</strong><br><small>맞춤 한약 안내</small></a><span class="active-indicator"></span></li>
-        <li data-menu="acupuncture"><a href="#acupuncture" class="menu-link" data-content="acupuncture"><strong>침</strong><br><small>MBT치료</small></a><span class="active-indicator"></span></li>
-        <li data-menu="faq"><a href="#faq" class="menu-link" data-content="faq"><strong>FAQ</strong><br><small>자주 묻는 질문</small></a><span class="active-indicator"></span></li>
-        <li data-menu="intro"><a href="#intro" class="menu-link" data-content="intro"><strong>한의원 소개</strong><br><small>우리 한의원에 대해</small></a><span class="active-indicator"></span></li>
-      </ul>
-    </nav>
-    <div id="main-image" class="home-content">
-      <!-- <img src="home-image.png" alt="밸런스를 회복하면 아침이 가벼워집니다" class="home-image-img"> -->
-      <img src="image/home.gif" alt="밸런스를 회복하면 아침이 가벼워집니다" class="home-image-img">
-    </div>
-    <div class="floating-content" id="floating-content">
-      <div class="content-wrapper">
-        <img src="" alt="샘플 이미지" class="content-image" id="content-image">
-        <div class="content-text" id="content-text"></div>
+<body data-root="" data-page="home">
+  <header class="site-header" id="site-header"></header>
+
+  <main class="site-main">
+    <section class="hero hero--home">
+      <div class="wrap">
+        <p class="hero__eyebrow">Dr. Balance · 논현동</p>
+        <h1>스트레스가 몸에 남긴 것을<br>푸는 한의원</h1>
+        <p class="hero__lead">
+          오래 앉아 있는 몸, 오래 서 있는 몸.<br>
+          긴장과 피로가 쌓인 자리를 차분히 살피고,<br>
+          일상으로 돌아갈 수 있게 돕습니다.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="【네이버 예약】">네이버 예약</a>
+          <a class="btn btn--ghost" href="tel:【전화번호】">전화 【전화번호】</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">점심시간 20분</span>
+          <span class="tag">붙이고 복귀</span>
+          <span class="tag">학동역 권역</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="band">
+      <div class="wrap">
+        <div class="figure-slot figure-slot--wide">
+          <div class="figure-slot__label">손그림 일러스트 자리</div>
+          <div class="figure-slot__hint">클리닉·공간 분위기 또는 몸을 부드럽게 그린 일러스트 (스톡 사진 사용 안 함)</div>
+        </div>
       </div>
     </div>
-  </div>
-  <main class="hidden-sections">
-    <section id="intro">
-      <h2>한의원 소개</h2>
-      <p>한의원에 대한 소개 내용이 들어갑니다.</p>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="section__label">침 치료</p>
+        <h2 class="section__title">점심시간 20분,<br>붙이고 복귀</h2>
+        <p>
+          “빠르다”는 말은 낫는 속도를 말하는 것이 아닙니다.<br>
+          진료 시간이 짧아, 바쁜 하루 사이에 들어올 수 있다는 뜻입니다.
+        </p>
+        <p>
+          필요한 자리에 침 치료를 하고, 상황에 따라 테이프침을 붙입니다.<br>
+          테이프는 옷 안쪽에 가려지며, 촬영 전에는 제거할 수 있습니다.
+        </p>
+        <div class="callout callout--accent">
+          <strong>급여 침 본인부담 약 10,500원</strong>
+          테이프침+추나 프로그램은 <span class="placeholder">【프로그램 이름】</span> · <span class="placeholder">【가격】</span> — 원장 확정 후 공개합니다.
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--sage" href="acupuncture/index.html">침 치료 안내</a>
+        </div>
+      </div>
     </section>
-    <section id="herb">
-      <h2>한약</h2>
-      <p>한약에 대한 설명이 들어갑니다.</p>
+
+    <section class="section">
+      <div class="wrap wrap--wide">
+        <p class="section__label">이런 증상</p>
+        <h2 class="section__title">몸이 남긴 신호를 증상별로</h2>
+        <div class="card-grid card-grid--2">
+          <a class="card" href="acupuncture/neck-shoulder.html">
+            <h3>목·어깨 긴장</h3>
+            <p>모니터 앞, 연습실에서 굳은 승모근과 뒷목.</p>
+            <span class="card__meta">자세히 보기 →</span>
+          </a>
+          <a class="card" href="acupuncture/headache.html">
+            <h3>두통·편두통</h3>
+            <p>긴장과 피로가 머리로 올라올 때.</p>
+            <span class="card__meta">자세히 보기 →</span>
+          </a>
+          <a class="card" href="acupuncture/back-pelvis.html">
+            <h3>허리·골반 통증</h3>
+            <p>오래 앉아 있거나, 서서 버틴 뒤의 부담.</p>
+            <span class="card__meta">자세히 보기 →</span>
+          </a>
+          <a class="card" href="acupuncture/ankle-calf.html">
+            <h3>발목·종아리·다리 부종</h3>
+            <p>서 있는 일과, 아래에서 쌓인 긴장.</p>
+            <span class="card__meta">자세히 보기 →</span>
+          </a>
+        </div>
+      </div>
     </section>
-    <section id="acupuncture">
-      <h2>침</h2>
-      <p>침 치료에 대한 설명이 들어갑니다.</p>
+
+    <section class="section">
+      <div class="wrap wrap--wide">
+        <p class="section__label">한약</p>
+        <h2 class="section__title">몸 안의 리듬을 다시 맞출 때</h2>
+        <p class="prose">
+          소화, 피부, 수면·불안처럼 스트레스가 남긴 자리를 한약으로 살핍니다.<br>
+          주력 증상 순서는 <span class="placeholder">【원장 확인】</span> 후 정리합니다.
+        </p>
+        <div class="card-grid card-grid--3">
+          <a class="card" href="herbs/digestion.html">
+            <h3>소화불량·역류</h3>
+            <p>더부룩함, 신물, 예민해진 속.</p>
+            <span class="card__meta">자세히 보기 →</span>
+          </a>
+          <a class="card" href="herbs/hives.html">
+            <h3>두드러기</h3>
+            <p>반복되는 가려움과 발진.</p>
+            <span class="card__meta">자세히 보기 →</span>
+          </a>
+          <a class="card" href="herbs/anxiety-sleep.html">
+            <h3>불안·불면</h3>
+            <p>잠이 얕고, 마음이 쉽게 흔들릴 때.</p>
+            <span class="card__meta">자세히 보기 →</span>
+          </a>
+        </div>
+      </div>
     </section>
-    <section id="faq">
-      <h2>FAQ</h2>
-      <p>자주 묻는 질문과 답변이 들어갑니다.</p>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="section__label">원장</p>
+        <h2 class="section__title">한의사 경력 17년</h2>
+        <p>
+          M-Test 한국 도입·보급, 『Dynamic M-Test』 저자.<br>
+          테이프침을 중심으로, 움직임과 압통을 함께 봅니다.
+        </p>
+        <div class="figure-slot">
+          <div class="figure-slot__label">손그림 일러스트 자리</div>
+          <div class="figure-slot__hint">원장 초상 일러스트 (사진 대체용, 스톡 모델 금지)</div>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--ghost" href="doctor/index.html">원장 소개</a>
+          <a class="btn btn--ghost" href="visit/index.html">처음 오시는 분</a>
+        </div>
+      </div>
     </section>
+
+    <aside class="cta-bar">
+      <div class="wrap">
+        <h2>예약이 필요하시면</h2>
+        <p>서울 강남구 논현동 37-16 (학동역 권역)</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="【네이버 예약】">【네이버 예약】</a>
+          <a class="btn btn--ghost" href="tel:【전화번호】">【전화번호】</a>
+          <a class="btn btn--ghost" href="contact/index.html">오시는 길</a>
+        </div>
+      </div>
+    </aside>
   </main>
-  <footer>
-    <p>&copy; 2025 아침나라한의원. All rights reserved.</p>
-  </footer>
-  <script src="script.js"></script>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="js/main.js"></script>
 </body>
-</html> 
+</html>
