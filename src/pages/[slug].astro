@@ -1,0 +1,50 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { treatmentCards } from '../data/site';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('treatments');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const card = treatmentCards.find((c) => c.slug === entry.id);
+---
+
+<Base title={entry.data.title} sizer>
+  <article class="doc">
+    <header class="doc-head">
+      {card && <span class="no">[{card.no}]</span>}
+      <h1>{entry.data.title}</h1>
+    </header>
+
+    <div class="doc-tools">
+      <button type="button" id="toggle-all" aria-pressed="false">모두 펼치기</button>
+    </div>
+
+    <div class="prose" id="prose">
+      <Content />
+    </div>
+  </article>
+</Base>
+
+<script>
+  const btn = document.getElementById('toggle-all') as HTMLButtonElement | null;
+  const all = () => Array.from(document.querySelectorAll<HTMLDetailsElement>('#prose details.acc'));
+  if (btn) {
+    const sync = () => {
+      const allOpen = all().length > 0 && all().every((d) => d.open);
+      btn.textContent = allOpen ? '모두 접기' : '모두 펼치기';
+      btn.setAttribute('aria-pressed', String(allOpen));
+    };
+    btn.addEventListener('click', () => {
+      const open = !all().every((d) => d.open);
+      all().forEach((d) => (d.open = open));
+      sync();
+    });
+    all().forEach((d) => d.addEventListener('toggle', sync));
+    sync();
+  }
+</script>

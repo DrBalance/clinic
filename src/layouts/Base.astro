@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+import '@fontsource/nanum-brush-script/korean-400.css';
+import '@fontsource/nanum-brush-script/latin-400.css';
+import '@fontsource/gaegu/korean-400.css';
+import '@fontsource/gaegu/latin-400.css';
+import FontSizer from '../components/FontSizer.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  sizer?: boolean;
+}
+const { title, description = site.tagline, sizer = false } = Astro.props;
+const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | 논현동 한의원`;
+const path = Astro.url.pathname;
+const nav = [
+  { href: '/#treatments', label: '치료 안내' },
+  { href: '/intro/', label: '한의원 소개' },
+  { href: '/faq/', label: '자주 묻는 질문' },
+];
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="theme-color" content="#FBF7F0" />
+    <!-- 저장된 글씨 크기를 화면이 그려지기 전에 적용 (깜빡임 방지) -->
+    <script is:inline>
+      try {
+        var fs = localStorage.getItem('fs');
+        if (fs) document.documentElement.style.setProperty('--fs', fs + 'px');
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <!-- 선이 살짝 흔들려 보이는 손그림 효과 -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n" />
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" />
+      </filter>
+    </svg>
+
+    <header class="site-header">
+      <div class="bar">
+        <a class="brand" href="/" aria-label={`${site.name} 홈`}>{site.name}</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          {nav.map((n) => <a href={n.href} aria-current={path === n.href ? 'page' : undefined}>{n.label}</a>)}
+        </nav>
+        <div class="bar-right">
+          {sizer && <FontSizer />}
+          {
+            site.phone ? (
+              <a class="tel" href={`tel:${site.phone.replace(/[^0-9]/g, '')}`}>
+                <span aria-hidden="true">☎</span> {site.phone}
+              </a>
+            ) : (
+              <span class="tel tel-todo">전화번호 준비 중</span>
+            )
+          }
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="foot">
+        <p class="foot-brand">{site.name}</p>
+        <p>{site.address} · {site.station}</p>
+        <p>{site.email}</p>
+        <p class="copy">&copy; {new Date().getFullYear()} {site.name}</p>
+      </div>
+    </footer>
+  </body>
+</html>

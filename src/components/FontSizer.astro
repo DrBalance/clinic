@@ -1,0 +1,91 @@
+---
+// 글씨 크기 슬라이더. 값은 브라우저에 저장되어 다음 방문에도 유지됩니다.
+// 실제 크기 적용은 <html> 의 --fs 변수 하나로 합니다 (모든 글자가 rem 기준).
+---
+
+<div class="sizer" role="group" aria-label="글씨 크기">
+  <span class="sm" aria-hidden="true">가</span>
+  <input
+    id="fs-range"
+    type="range"
+    min="16"
+    max="30"
+    step="1"
+    value="19"
+    aria-label="글씨 크기 조절"
+  />
+  <span class="lg" aria-hidden="true">가</span>
+</div>
+
+<script>
+  const range = document.getElementById('fs-range') as HTMLInputElement | null;
+  if (range) {
+    const root = document.documentElement;
+    const current = parseFloat(getComputedStyle(root).getPropertyValue('--fs')) || 19;
+    range.value = String(current);
+    range.addEventListener('input', () => {
+      root.style.setProperty('--fs', `${range.value}px`);
+      try {
+        localStorage.setItem('fs', range.value);
+      } catch {
+        /* 저장이 막힌 환경에서는 이번 방문에만 적용됩니다 */
+      }
+    });
+  }
+</script>
+
+<style>
+  .sizer {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 16px;
+  }
+  .sm {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .lg {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 7.5rem;
+    height: 28px;
+    background: transparent;
+    cursor: pointer;
+  }
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 3px;
+    background: var(--ink);
+    border-radius: 3px;
+  }
+  input[type='range']::-moz-range-track {
+    height: 3px;
+    background: var(--ink);
+    border-radius: 3px;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    margin-top: -9.5px;
+    border-radius: 50%;
+    background: var(--peach);
+    border: 2.5px solid var(--ink);
+  }
+  input[type='range']::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--peach);
+    border: 2.5px solid var(--ink);
+  }
+  input[type='range']:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 4px;
+    border-radius: 6px;
+  }
+</style>

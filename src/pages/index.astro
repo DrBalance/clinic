@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import Illust from '../components/Illust.astro';
+import { site, treatmentCards } from '../data/site';
+---
+
+<Base>
+  <section class="hero">
+    <div class="hero-art"><Illust name="sun" /></div>
+    <h1>밸런스를 회복하면<br />아침이 가벼워집니다</h1>
+    <p>{site.name} · 서울 논현동</p>
+  </section>
+
+  <div class="wrap" id="treatments">
+    <h2 class="section-label">치료 안내</h2>
+    <div class="tiles">
+      {
+        treatmentCards.map((c) => (
+          <a class="tile" href={`/${c.slug}/`}>
+            <div class="art">
+              <Illust name={c.art} />
+            </div>
+            <span class="no">[{c.no}]</span>
+            <h3>{c.title}</h3>
+            <p>{c.desc}</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <section class="info" id="visit">
+    <div class="wrap info-grid">
+      <div>
+        <h3>오시는 길</h3>
+        <p>{site.address}</p>
+        <p>{site.station}</p>
+      </div>
+      <div>
+        <h3>진료시간</h3>
+        <ul>
+          {site.hours.map((h) => <li>{h.label} <span class="todo">{h.time}</span></li>)}
+        </ul>
+      </div>
+      <div>
+        <h3>문의 · 예약</h3>
+        <p>
+          {
+            site.phone ? (
+              <a href={`tel:${site.phone.replace(/[^0-9]/g, '')}`}>{site.phone}</a>
+            ) : (
+              <span class="todo">전화번호 준비 중</span>
+            )
+          }
+        </p>
+        <p>{site.email}</p>
+      </div>
+    </div>
+  </section>
+</Base>
