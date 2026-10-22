@@ -78,11 +78,14 @@ a {
   gap: 0.4rem 1.4rem;
 }
 .brand {
-  font-family: var(--font-brush);
-  font-size: 30px;
-  line-height: 1.1;
+  display: block;
+  line-height: 0;
   text-decoration: none;
-  letter-spacing: 0.02em;
+}
+.brand img {
+  display: block;
+  height: 30px;
+  width: auto;
 }
 .nav {
   display: flex;
@@ -135,12 +138,13 @@ a {
   aspect-ratio: 1;
 }
 .hero h1 {
-  font-family: var(--font-brush);
-  font-weight: 400;
-  font-size: clamp(2.6rem, 9vw, 5.6rem);
-  line-height: 1.22;
   margin: 0;
-  letter-spacing: 0.01em;
+  line-height: 0;
+}
+.hero h1 img {
+  display: inline-block;
+  width: min(40rem, 88vw);
+  height: auto;
 }
 .hero p {
   margin: 1.4rem 0 0;
@@ -367,9 +371,12 @@ details.acc[open] .acc-mark::after {
   margin: 0.1rem 0;
 }
 .foot-brand {
-  font-family: var(--font-brush);
-  font-size: 1.6rem;
-  color: var(--ink);
+  margin-bottom: 0.4rem !important;
+  line-height: 0;
+}
+.foot-brand img {
+  height: 24px;
+  width: auto;
 }
 .copy {
   margin-top: 0.8rem !important;

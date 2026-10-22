@@ -53,7 +53,9 @@ const nav = [
 
     <header class="site-header">
       <div class="bar">
-        <a class="brand" href="/" aria-label={`${site.name} 홈`}>{site.name}</a>
+        <a class="brand" href="/" aria-label={`${site.name} 홈`}>
+          <img src="/brand/name.svg" alt={site.name} width="169" height="30" />
+        </a>
         <nav class="nav" aria-label="주요 메뉴">
           {nav.map((n) => <a href={n.href} aria-current={path === n.href ? 'page' : undefined}>{n.label}</a>)}
         </nav>
@@ -78,7 +80,7 @@ const nav = [
 
     <footer class="site-footer">
       <div class="foot">
-        <p class="foot-brand">{site.name}</p>
+        <p class="foot-brand"><img src="/brand/name.svg" alt={site.name} width="135" height="24" /></p>
         <p>{site.address} · {site.station}</p>
         <p>{site.email}</p>
         <p class="copy">&copy; {new Date().getFullYear()} {site.name}</p>
