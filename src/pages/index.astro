@@ -2,6 +2,9 @@
 import Base from '../layouts/Base.astro';
 import Illust from '../components/Illust.astro';
 import { site, treatmentCards } from '../data/site';
+import { getBlogPosts, fmtDate } from '../lib/naver';
+
+const recent = (await getBlogPosts(site.naverBlogId, 3)) ?? [];
 ---
 
 <Base>
@@ -30,6 +33,29 @@ import { site, treatmentCards } from '../data/site';
       }
     </div>
   </div>
+
+  {
+    recent.length > 0 && (
+      <section class="wrap recent">
+        <h2 class="section-label">최근 블로그 글</h2>
+        <ul class="posts">
+          {recent.map((p) => (
+            <li>
+              <a href={p.link} target="_blank" rel="noopener noreferrer">
+                {p.thumb && <img src={p.thumb} alt="" loading="lazy" width="160" height="160" referrerpolicy="no-referrer" />}
+                <div class="p-body">
+                  <h2>{p.title}</h2>
+                  {p.summary && <p>{p.summary}</p>}
+                  {p.date && <time datetime={p.date.toISOString()}>{fmtDate(p.date)}</time>}
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="to-blog"><a href="/blog/">블로그 글 더 보기 →</a></p>
+      </section>
+    )
+  }
 
   <section class="info" id="visit">
     <div class="wrap info-grid">

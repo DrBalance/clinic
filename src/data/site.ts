@@ -14,8 +14,8 @@ export const site = {
     { label: '토요일', time: '00:00 – 00:00' },
     { label: '일 · 공휴일', time: '휴진' },
   ],
-  // TODO: 네이버 블로그 아이디 (RSS 연동에 사용)
-  naverBlogId: '',
+  // 네이버 블로그 (RSS 로 글 목록을 가져옵니다)
+  naverBlogId: 'drbalance',
 };
 
 export const treatmentCards = [

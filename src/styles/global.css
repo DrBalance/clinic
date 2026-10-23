@@ -401,3 +401,69 @@ details.acc[open] .acc-mark::after {
     justify-content: space-between;
   }
 }
+
+/* ───────── 블로그 ───────── */
+.lede {
+  margin: 0 0 1.6rem;
+  color: var(--ink-soft);
+}
+.posts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.posts li {
+  border-top: 1px solid var(--line);
+}
+.posts li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.posts a {
+  display: flex;
+  gap: 1rem;
+  padding: 1.1rem 0.2rem;
+  text-decoration: none;
+}
+.posts a:hover h2 {
+  background: linear-gradient(transparent 62%, var(--peach-soft) 62%);
+}
+.posts img {
+  flex: none;
+  width: 5.5rem;
+  height: 5.5rem;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--paper-2);
+}
+.p-body h2 {
+  display: inline;
+  margin: 0;
+  /* 블로그 글 제목은 어떤 글자든 올 수 있어서 제목 전용 서체(일부 글자만 담음) 대신 본문 서체를 씁니다 */
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.12rem;
+  line-height: 1.5;
+}
+.p-body p {
+  margin: 0.35rem 0 0.3rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.p-body time {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.empty {
+  padding: 1.2rem;
+  border: 1px dashed var(--peach);
+  border-radius: 8px;
+}
+.to-blog {
+  margin-top: 1.6rem;
+  font-weight: 700;
+}
+.recent {
+  padding-bottom: 3rem;
+}

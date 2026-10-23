@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # 네이버 블로그 새 글을 반영하기 위해 매시간 다시 빌드합니다
+  schedule:
+    - cron: '17 * * * *'
 
 permissions:
   contents: read
