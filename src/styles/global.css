@@ -1,3 +1,11 @@
+/* 제목용 강원교육모두체: 제목에 쓰는 글자만 담은 가벼운 파일 (tools/make-title-font.py) */
+@font-face {
+  font-family: 'GW Title';
+  src: url('/fonts/gw-title.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
   --paper: #fbf7f0;
   --paper-2: #f3ede2;
@@ -12,8 +20,7 @@
   --fs: 19px;
 
   --font-body: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
-  --font-brush: 'Nanum Brush Script', 'Gaegu', cursive;
-  --font-hand: 'Gaegu', 'Nanum Brush Script', cursive;
+  --font-title: 'GW Title', var(--font-body);
 }
 
 *,
@@ -153,7 +160,8 @@ a {
 }
 
 .section-label {
-  font-family: var(--font-hand);
+  font-family: var(--font-title);
+  font-weight: 700;
   font-size: 1.6rem;
   margin: 0 0 1.2rem;
 }
@@ -186,11 +194,13 @@ a {
   align-self: center;
 }
 .tile .no {
-  font-family: var(--font-hand);
+  font-family: var(--font-title);
+  font-weight: 700;
   font-size: 1.1rem;
   color: var(--ink-soft);
 }
 .tile h3 {
+  font-family: var(--font-title);
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.35;
@@ -219,9 +229,9 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 }
 .info h3 {
-  font-family: var(--font-hand);
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.35rem;
   margin: 0 0 0.4rem;
 }
 .info p,
@@ -245,14 +255,15 @@ a {
   padding: clamp(2rem, 6vw, 4rem) 1.25rem 5rem;
 }
 .doc-head .no {
-  font-family: var(--font-hand);
+  font-family: var(--font-title);
+  font-weight: 700;
   font-size: 1.2rem;
   color: var(--ink-soft);
 }
 .doc-head h1 {
-  font-family: var(--font-brush);
-  font-weight: 400;
-  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6.5vw, 3.2rem);
   line-height: 1.2;
   margin: 0.1rem 0 1.2rem;
 }
@@ -309,6 +320,7 @@ details.acc:last-of-type {
   border-bottom: 1px solid var(--line);
 }
 details.acc summary {
+  font-family: var(--font-title);
   list-style: none;
   cursor: pointer;
   display: flex;
