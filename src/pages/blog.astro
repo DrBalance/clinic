@@ -22,6 +22,7 @@ const blogUrl = `https://blog.naver.com/${site.naverBlogId}`;
               <a href={p.link} target="_blank" rel="noopener noreferrer">
                 {p.thumb && <img src={p.thumb} alt="" loading="lazy" width="160" height="160" referrerpolicy="no-referrer" />}
                 <div class="p-body">
+                  {p.category && <span class="cat">{p.category}</span>}
                   <h2>{p.title}</h2>
                   {p.summary && <p>{p.summary}</p>}
                   {p.date && <time datetime={p.date.toISOString()}>{fmtDate(p.date)}</time>}

@@ -467,3 +467,10 @@ details.acc[open] .acc-mark::after {
 .recent {
   padding-bottom: 3rem;
 }
+
+.p-body .cat {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}

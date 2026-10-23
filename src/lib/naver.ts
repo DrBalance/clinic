@@ -8,6 +8,7 @@ export interface BlogPost {
   date: Date | null;
   summary: string;
   thumb: string | null;
+  category: string;
 }
 
 const decode = (s: string) =>
@@ -35,17 +36,23 @@ export function parseFeed(xml: string): BlogPost[] {
       const desc = text(it.description);
       const img = desc.match(/<img[^>]+src=["']([^"']+)["']/i)?.[1] ?? null;
       const enc = (it.enclosure as Record<string, string> | undefined)?.['@_url'] ?? null;
-      const summary = decode(desc.replace(/<\/?(b|i|u|em|strong|span|a|font)(\s[^>]*)?>/gi, '').replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim();
+      const summary = decode(desc.replace(/<\/?(b|i|u|em|strong|span|a|font)(\s[^>]*)?>/gi, '').replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim().replace(/\.{3,}$/, '').trim();
       const d = new Date(text(it.pubDate));
+      // 네이버 RSS 의 link 에는 추적용 ?fromRss=true&trackingCode=rss 가 붙어 있어서, 깨끗한 주소인 guid 를 우선 씁니다.
+      const guid = text(it.guid).trim();
+      const link = /^https?:\/\//.test(guid) ? guid : text(it.link).trim().split('?')[0];
       return {
         title: decode(text(it.title)).trim(),
-        link: text(it.link).trim(),
+        link,
+        category: decode(text(it.category)).trim(),
         date: isNaN(d.getTime()) ? null : d,
-        summary: summary.length > 110 ? summary.slice(0, 110).trimEnd() + '…' : summary,
+        summary: summary.length > 110 ? summary.slice(0, 110).trimEnd() + '…' : summary + (summary ? '…' : ''),
         thumb: (img ?? enc)?.replace(/^http:\/\//, 'https://') ?? null,
       };
     })
-    .filter((p) => p.title && /^https?:\/\//.test(p.link));
+    .filter((p) => p.title && /^https?:\/\//.test(p.link))
+    // 최신 글이 위로 오도록 날짜순 정렬 (날짜가 없는 글은 맨 뒤)
+    .sort((a, b) => (b.date?.getTime() ?? 0) - (a.date?.getTime() ?? 0));
 }
 
 export async function getBlogPosts(blogId: string, limit = 30): Promise<BlogPost[] | null> {
