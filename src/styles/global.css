@@ -222,14 +222,16 @@ a {
   align-items: center;
   gap: 1rem;
   margin-bottom: 4rem;
-  padding: 1.1rem 1.4rem;
-  border: 1.5px dashed var(--peach);
+  padding: 2rem 1.6rem;
+  background: var(--paper-2);
   border-radius: 8px;
+  font-size: 1.05rem;
   text-decoration: none;
 }
 .herb-strip span:nth-child(2) { flex: 1; }
 .herb-strip .no { font-family: var(--font-title); color: var(--ink-soft); }
-.herb-strip:hover { background: var(--peach-soft); }
+.herb-strip { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.herb-strip:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(34, 48, 79, 0.1); }
 .doc-head .sub { margin: -0.4rem 0 1.2rem; color: var(--ink-soft); font-size: 1.05rem; }
 .prose blockquote {
   margin: 0 0 1.4rem;
