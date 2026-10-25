@@ -500,7 +500,7 @@ details.acc[open] .acc-mark::after {
 
 /* ───────── 오시는 길 ───────── */
 .map { margin: 0 0 1.6rem; }
-.map img { display: block; width: 100%; height: auto; border-radius: 8px; background: #fff; }
+.map img { display: block; width: 100%; height: auto; }
 .where { margin: 0 0 1.4rem; }
 .where div { display: flex; gap: 1rem; padding: 0.7rem 0; border-top: 1px solid var(--line); }
 .where div:last-child { border-bottom: 1px solid var(--line); }
