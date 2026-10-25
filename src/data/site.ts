@@ -7,7 +7,7 @@ export const site = {
   email: 'drbalance@naver.com',
 
   // TODO: 새 한의원 전화번호 (예: '02-000-0000')
-  phone: '',
+  phone: '02-511-7727',
   // TODO: 진료시간
   hours: [
     { label: '평일', time: '00:00 – 00:00' },
