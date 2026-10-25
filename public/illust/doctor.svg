@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="의사와 환자의 상담">
+<defs><filter id="w" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter></defs>
+<g filter="url(#w)" fill="none" stroke="#22304f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+
+<circle cx="110" cy="76" r="26"/>
+<path d="M60 224C60 160 76 118 110 118C144 118 160 160 160 224"/>
+<path d="M96 120L110 156L124 120" />
+<path d="M126 150C140 152 144 170 134 178" stroke-width="2.6"/>
+<circle cx="290" cy="86" r="24" fill="#f2b8a2"/>
+<path d="M240 224C240 168 256 128 290 128C324 128 340 168 340 224"/>
+<path d="M270 70C280 54 304 54 310 70"/>
+<path d="M176 40H252C262 40 266 46 266 54V70C266 78 260 82 252 82H220L204 96V82H176C168 82 164 78 164 70V54C164 46 168 40 176 40Z"/>
+<path d="M214 52C206 44 196 54 214 70C232 54 222 44 214 52Z" fill="#f2b8a2" stroke-width="2.4"/>
+</g></svg>

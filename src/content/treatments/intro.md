@@ -1,10 +1,10 @@
 ---
 title: "한의원 소개"
 order: 7
-legacyImage: "/image/intro1.png"
 ---
 ### 밸런스를 회복하면 아침이 가벼워집니다.
-<img src="/image/morning_comment.jpg" class="content-image" alt="한의원 소개">
+![아침 해가 떠오르는 언덕](/illust/morning.svg)
+
 
 몸의 밸런스를 잃으면 건강에 여러 가지 이상이 오게 됩니다.  
 밸런스 한의원 아침나라는 밸런스를 회복시키는 전신치료를 하는 한의원입니다.  
@@ -40,7 +40,9 @@ legacyImage: "/image/intro1.png"
 잘 낫지 않는 질환은 포기하기 쉽습니다만, 이원천 원장은 환자의 불편함을 덜어주고 싶은 마음으로 치료하기 때문에 포기하지 않습니다.  
 더 나은 방법을 찾기 위해 우리나라 뿐만 아니라 중국, 일본의 훌륭한 치료법을 계속 연구하고 있습니다.  
 밸런스 치료법 역시 이런 노력의 결과입니다.
-<img src="/image/effort_comment.jpg" class="content-image" alt="한의원 소개">
+
+![늘 연구하는 마음](/illust/effort.svg)
+
 
 *환자의 마음을 먼저 이해하는 진료를 합니다  
 
@@ -48,7 +50,6 @@ legacyImage: "/image/intro1.png"
 다시 새롭게 치료를 시작하시려면 여러가지 걱정도 많으시겠죠.  
 아침나라 한의원은 치료를 하는 매 순간마다 "내가 지금 아프다면… "이라는 생각을 가지고 진료합니다
 
-<img src="/image/intro2.png" class="content-image" alt="한의원 소개">
 
 ### 치과대학에서 한의과대학으로
 
