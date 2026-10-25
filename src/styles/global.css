@@ -497,3 +497,14 @@ details.acc[open] .acc-mark::after {
   font-size: 0.8rem;
   color: var(--ink-soft);
 }
+
+/* ───────── 오시는 길 ───────── */
+.map { margin: 0 0 1.6rem; }
+.map img { display: block; width: 100%; height: auto; border-radius: 8px; background: #fff; }
+.where { margin: 0 0 1.4rem; }
+.where div { display: flex; gap: 1rem; padding: 0.7rem 0; border-top: 1px solid var(--line); }
+.where div:last-child { border-bottom: 1px solid var(--line); }
+.where dt { flex: none; width: 5.5rem; font-weight: 700; }
+.where dd { margin: 0; }
+.btn { display: inline-block; padding: 0.6rem 1.4rem; border: 1.5px solid var(--ink); border-radius: 999px; font-weight: 700; text-decoration: none; }
+.btn:hover { background: var(--peach-soft); }

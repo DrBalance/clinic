@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+
+const q = encodeURIComponent(site.address.replace('서울 ', '서울 '));
+const naver = `https://map.naver.com/p/search/${q}`;
+---
+
+<Base title="오시는 길" description={`${site.name} 오시는 길 · ${site.address}`}>
+  <article class="doc">
+    <header class="doc-head">
+      <h1>오시는 길</h1>
+      <p class="sub">{site.station}에서 걸어서 오실 수 있어요</p>
+    </header>
+
+    <figure class="map">
+      <img src="/brand/map.svg" width="271" height="153" alt={`${site.name} 약도: ${site.station}에서 점선을 따라 시엔빌딩 2층까지`} />
+    </figure>
+
+    <dl class="where">
+      <div><dt>주소</dt><dd>{site.address}</dd></div>
+      <div><dt>가까운 역</dt><dd>{site.station}</dd></div>
+    </dl>
+
+    <p class="map-links">
+      <a class="btn" href={naver} target="_blank" rel="noopener noreferrer">네이버 지도에서 보기</a>
+    </p>
+  </article>
+</Base>
