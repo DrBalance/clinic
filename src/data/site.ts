@@ -15,6 +15,8 @@ export const site = {
     { label: '토요일', time: '10:30 – 14:00' },
     { label: '일 · 공휴일', time: '휴진' },
   ] as { label: string; time: string; note?: string }[],
+  // 네이버 예약 주소 (예: 'https://naver.me/xxxx'). 비워 두면 예약 버튼이 보이지 않습니다.
+  bookingUrl: '',
   // 네이버 블로그 (RSS 로 글 목록을 가져옵니다)
   naverBlogId: 'drbalance',
 };

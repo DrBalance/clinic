@@ -93,7 +93,7 @@ const recent = (await getBlogPosts(site.naverBlogId, 3)) ?? [];
             )
           }
         </p>
-        <p>{site.email}</p>
+        {site.bookingUrl && <p><a class="btn" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">네이버 예약</a></p>}
       </div>
     </div>
   </section>
