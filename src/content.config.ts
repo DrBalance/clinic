@@ -6,6 +6,7 @@ const treatments = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/treatments' }),
   schema: z.object({
     title: z.string(),
+    subtitle: z.string().optional(),
     order: z.number(),
     legacyImage: z.string().optional(),
   }),

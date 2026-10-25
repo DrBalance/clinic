@@ -19,9 +19,9 @@ export const site = {
 };
 
 export const treatmentCards = [
-  { slug: 'yinxu', no: '01', title: '음정(陰精)회복 플랜', desc: '검사에는 나오지 않지만 몸은 분명 이상을 느낍니다', art: 'moon' },
-  { slug: 'disk', no: '02', title: '척추밸런스 케어', desc: "몸은 근육보다 '감각'이 먼저 무너집니다", art: 'spine' },
-  { slug: 'diet', no: '03', title: '밸런스 다이어트', desc: '몸이 먼저 건강해져야 살이 빠집니다', art: 'bowl' },
-  { slug: 'herb', no: '04', title: '한약', desc: '만성피로, 불면증, 우울증, 공황장애', art: 'pot' },
-  { slug: 'acupuncture', no: '05', title: '침 · MBT 치료', desc: '몸에 맞는 적절한 자극이 큰 효과를 냅니다', art: 'needle' },
+  { slug: 'acupuncture', no: '01', title: '침 · 테이프침', desc: '부드러운 자극이 지친 몸을 회복합니다', art: 'needle' },
+  { slug: 'digestion', no: '02', title: '소화기 장애', desc: '생각이 많은 날, 속이 먼저 반응합니다', art: 'bowl' },
+  { slug: 'sleep', no: '03', title: '불안 · 불면', desc: '결정하지 못한 마음이 밤까지 이어질 때', art: 'moon' },
+  { slug: 'urticaria', no: '04', title: '두드러기', desc: '피부에 올라오는 몸의 신호', art: 'skin' },
+  { slug: 'herb', no: '05', title: '한약', desc: '몸 전체의 균형을 보고 처방합니다', art: 'pot' },
 ] as const;

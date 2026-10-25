@@ -13,7 +13,8 @@ const { title, description = site.tagline, sizer = false } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | 논현동 한의원`;
 const path = Astro.url.pathname;
 const nav = [
-  { href: '/#treatments', label: '치료 안내' },
+  { href: '/#treatments', label: '진료 안내' },
+  { href: '/herb/', label: '한약' },
   { href: '/intro/', label: '한의원 소개' },
   { href: '/blog/', label: '블로그' },
   { href: '/faq/', label: '자주 묻는 질문' },

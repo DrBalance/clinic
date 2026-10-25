@@ -31,6 +31,8 @@ export default function rehypeAccordion() {
         };
         first = false;
         out.push(details);
+      } else if (node.type === 'element' && node.tagName === 'hr') {
+        body = null; // 구분선: 아코디언을 끝내고, 뒤의 글은 항상 보이게 둡니다
       } else if (body) {
         body.children.push(node);
       } else {

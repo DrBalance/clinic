@@ -27,11 +27,11 @@ def collect_chars():
         for line in md.read_text(encoding='utf8').splitlines():
             if line.startswith('### '):
                 chars |= set(line[4:])
-            m = re.match(r'title:\s*"(.*)"', line)
+            m = re.match(r'(?:title|subtitle):\s*"(.*)"', line)
             if m:
                 chars |= set(m.group(1))
     site = (ROOT / 'src/data/site.ts').read_text(encoding='utf8')
-    for m in re.finditer(r"title:\s*'([^']*)'", site):
+    for m in re.finditer(r"(?:title|desc):\s*['\"]([^'\"]*)['\"]", site):
         chars |= set(m.group(1))
     return ''.join(sorted(c for c in chars if not c.isspace())) + ' '
 

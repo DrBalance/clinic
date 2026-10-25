@@ -2,7 +2,7 @@
 // 약도 그림체(남색 손그림 선 + 살구색 포인트)에 맞춘 치료 소개 일러스트.
 // 선이 살짝 흔들리는 효과는 Base.astro 의 #wobble 필터가 만듭니다.
 interface Props {
-  name: 'moon' | 'spine' | 'bowl' | 'pot' | 'needle' | 'sun';
+  name: 'moon' | 'spine' | 'bowl' | 'pot' | 'needle' | 'sun' | 'skin';
 }
 const { name } = Astro.props;
 ---
@@ -18,6 +18,17 @@ const { name } = Astro.props;
   role="img"
   aria-hidden="true"
 >
+  {name === 'skin' && (
+    <g>
+      <path d="M24 100C24 62 52 38 84 38C116 38 138 62 138 98C138 124 118 140 90 140C54 140 24 128 24 100Z" />
+      <circle cx="62" cy="80" r="11" fill="var(--peach)" />
+      <circle cx="98" cy="70" r="8" fill="var(--peach)" />
+      <circle cx="94" cy="108" r="12" fill="var(--peach)" />
+      <circle cx="56" cy="116" r="5" />
+      <circle cx="120" cy="92" r="4" />
+      <path d="M40 24C46 18 52 18 58 24" />
+    </g>
+  )}
   {name === 'moon' && (
     <g>
       <path d="M98 20C60 24 34 56 40 94C46 130 80 148 114 138C88 130 72 106 76 80C79 56 88 38 98 20Z" />

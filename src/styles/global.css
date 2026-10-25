@@ -95,10 +95,12 @@ a {
   width: auto;
 }
 .nav {
+  flex-wrap: wrap;
   display: flex;
   gap: 1.2rem;
 }
 .nav a {
+  white-space: nowrap;
   text-decoration: none;
   font-weight: 600;
   padding: 0.35rem 0;
@@ -212,12 +214,31 @@ a {
   line-height: 1.6;
 }
 @media (min-width: 760px) {
-  .tile:nth-child(1) { grid-column: span 7; }
-  .tile:nth-child(2) { grid-column: span 5; }
-  .tile:nth-child(3),
-  .tile:nth-child(4),
-  .tile:nth-child(5) { grid-column: span 4; }
+  .tile { grid-column: span 6; }
 }
+.tiles { padding-bottom: 1.2rem; }
+.herb-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  padding: 1.1rem 1.4rem;
+  border: 1.5px dashed var(--peach);
+  border-radius: 8px;
+  text-decoration: none;
+}
+.herb-strip span:nth-child(2) { flex: 1; }
+.herb-strip .no { font-family: var(--font-title); color: var(--ink-soft); }
+.herb-strip:hover { background: var(--peach-soft); }
+.doc-head .sub { margin: -0.4rem 0 1.2rem; color: var(--ink-soft); font-size: 1.05rem; }
+.prose blockquote {
+  margin: 0 0 1.4rem;
+  padding: 0.2rem 0 0.2rem 1rem;
+  border-left: 3px solid var(--peach);
+  color: var(--ink-soft);
+}
+.prose blockquote p { margin: 0; }
+.prose hr { display: none; }
 
 .info {
   border-top: 1px solid var(--line);

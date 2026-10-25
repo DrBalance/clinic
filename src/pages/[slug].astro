@@ -18,6 +18,7 @@ const card = treatmentCards.find((c) => c.slug === entry.id);
     <header class="doc-head">
       {card && <span class="no">[{card.no}]</span>}
       <h1>{entry.data.title}</h1>
+      {entry.data.subtitle && <p class="sub">{entry.data.subtitle}</p>}
     </header>
 
     <div class="doc-tools">
