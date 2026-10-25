@@ -8,12 +8,13 @@ export const site = {
 
   // TODO: 새 한의원 전화번호 (예: '02-000-0000')
   phone: '02-511-7727',
-  // TODO: 진료시간
+  // 진료시간 (note 는 해당 줄 아래에 작게 표시)
   hours: [
-    { label: '평일', time: '00:00 – 00:00' },
-    { label: '토요일', time: '00:00 – 00:00' },
+    { label: '평일', time: '10:30 – 19:30', note: '점심시간 14:00 – 15:00' },
+    { label: '목요일', time: '예약진료' },
+    { label: '토요일', time: '10:30 – 14:00' },
     { label: '일 · 공휴일', time: '휴진' },
-  ],
+  ] as { label: string; time: string; note?: string }[],
   // 네이버 블로그 (RSS 로 글 목록을 가져옵니다)
   naverBlogId: 'drbalance',
 };

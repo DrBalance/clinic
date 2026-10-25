@@ -508,3 +508,5 @@ details.acc[open] .acc-mark::after {
 .where dd { margin: 0; }
 .btn { display: inline-block; padding: 0.6rem 1.4rem; border: 1.5px solid var(--ink); border-radius: 999px; font-weight: 700; text-decoration: none; }
 .btn:hover { background: var(--peach-soft); }
+
+.info .note { display: block; font-size: 0.85rem; color: var(--ink-soft); }

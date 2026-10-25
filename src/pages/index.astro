@@ -79,7 +79,7 @@ const recent = (await getBlogPosts(site.naverBlogId, 3)) ?? [];
       <div>
         <h3>진료시간</h3>
         <ul>
-          {site.hours.map((h) => <li>{h.label} <span class="todo">{h.time}</span></li>)}
+          {site.hours.map((h) => <li>{h.label} {h.time}{h.note && <small class="note">({h.note})</small>}</li>)}
         </ul>
       </div>
       <div>
