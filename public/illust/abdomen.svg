@@ -1,15 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="배를 눌러 살피는 복진">
-<defs><filter id="w" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter></defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="누워서 배를 눌러 보는 복진">
+<defs><filter id="w" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter></defs>
 <g filter="url(#w)" fill="none" stroke="#22304f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
 
-<path d="M120 20C120 40 100 46 76 54C52 62 44 84 44 120V224"/>
-<path d="M280 20C280 40 300 46 324 54C348 62 356 84 356 120V224"/>
-<path d="M120 20H280" />
-<path d="M118 104C118 90 280 90 282 104V190C282 214 250 226 200 226C150 226 118 214 118 190Z"/>
-<g stroke-dasharray="2 8" stroke-width="3">
-<path d="M200 96V222"/><path d="M122 130H278"/><path d="M122 160H278"/><path d="M122 190H278"/></g>
-<circle cx="200" cy="152" r="5" fill="#22304f" stroke="none"/>
-<path d="M214 146C228 140 246 146 252 160C244 176 226 178 214 170Z" fill="#f2b8a2"/>
-<path d="M330 120C316 134 296 134 284 128" />
-<path d="M336 104C350 100 356 116 346 128L322 150L304 138Z" fill="#f2b8a2"/>
+<path d="M20 212H380"/>
+<circle cx="62" cy="150" r="30"/>
+<path d="M54 146H58M68 146H72" stroke-width="3.6"/><path d="M56 160C60 164 66 164 70 160" stroke-width="2.6"/>
+<path d="M94 126C140 112 330 112 366 128V188C330 202 140 202 94 184Z"/>
+<g stroke-dasharray="3 7" stroke-width="3">
+<path d="M140 120V192"/><path d="M190 118V196"/><path d="M240 118V196"/><path d="M290 118V196"/><path d="M118 156H338"/></g>
+<circle cx="214" cy="158" r="4.5" fill="#22304f" stroke="none"/>
+<path d="M180 64C176 50 192 44 198 54L206 70L224 62C232 58 240 66 234 74L226 96C220 108 196 112 184 100Z" fill="#f2b8a2"/>
+<path d="M196 54V36M214 60V40" stroke-width="2.6"/>
 </g></svg>

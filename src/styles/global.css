@@ -512,3 +512,5 @@ details.acc[open] .acc-mark::after {
 .info .note { display: block; font-size: 0.85rem; color: var(--ink-soft); }
 
 .prose img[src$=".svg"] { max-width: 22rem; width: 100%; margin: 0.4rem auto 1.4rem; mix-blend-mode: normal; }
+
+.prose p > em:only-child { display: block; margin-top: -0.8rem; text-align: center; font-style: normal; font-size: 0.88rem; color: var(--ink-soft); }

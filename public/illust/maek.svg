@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="맥을 짚는 손">
-<defs><filter id="w" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter></defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="손목의 맥을 짚는 모습">
+<defs><filter id="w" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter></defs>
 <g filter="url(#w)" fill="none" stroke="#22304f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-<path d="M16 122H228"/><path d="M16 186H228"/>
-<path d="M228 122C262 112 300 114 330 124C352 130 372 138 368 154C364 170 344 168 324 166"/>
-<path d="M228 186C262 190 296 190 322 184"/>
-<path d="M324 166C340 170 346 184 330 188"/>
-<path d="M330 188C320 196 300 196 290 192" />
-<path d="M276 130C284 112 306 112 312 124" stroke-width="2.6"/>
+
+<path d="M14 96H84V196H14"/><path d="M84 106H150"/><path d="M84 186H150"/>
+<path d="M150 106C170 96 200 96 222 104L232 196C200 204 170 198 150 186"/>
+<path d="M222 108L330 100C346 99 346 118 330 120L224 128"/>
+<path d="M224 130L338 126C354 126 354 146 338 148L226 154"/>
+<path d="M226 156L330 154C346 154 346 174 330 176L228 180"/>
+<path d="M150 190C160 214 200 222 236 204C252 196 262 190 270 186" />
 <g fill="#f2b8a2">
-<path d="M104 94C96 82 110 72 120 80L152 124L130 136Z"/>
-<path d="M136 88C130 75 144 66 153 75L182 122L162 134Z"/>
-<path d="M170 86C166 74 180 66 188 76L210 120L192 130Z"/>
+<path d="M96 64C86 54 98 42 108 50L142 96L120 110Z"/>
+<path d="M126 58C118 46 131 36 140 45L170 94L150 106Z"/>
+<path d="M156 56C150 44 163 36 171 46L196 92L178 103Z"/>
 </g>
-<circle cx="150" cy="150" r="3" fill="#22304f" stroke="none"/><circle cx="180" cy="152" r="3" fill="#22304f" stroke="none"/>
-<path d="M20 52H60L72 30L90 72L108 40L124 52H180" stroke-width="2.6"/>
+<path d="M240 40H270L280 22L294 58L308 34L318 40H360" stroke-width="2.6"/>
 </g></svg>
