@@ -30,6 +30,7 @@
 }
 
 html {
+  scrollbar-gutter: stable;
   font-size: var(--fs);
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -76,13 +77,13 @@ a {
   border-bottom: 1px solid var(--line);
 }
 .bar {
-  max-width: 70rem;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0.6rem 1.25rem;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.4rem 1.4rem;
+  gap: 6px 22px;
 }
 .brand {
   display: block;
@@ -97,13 +98,13 @@ a {
 .nav {
   flex-wrap: wrap;
   display: flex;
-  gap: 1.2rem;
+  gap: 19px;
 }
 .nav a {
   white-space: nowrap;
   text-decoration: none;
   font-weight: 600;
-  padding: 0.35rem 0;
+  padding: 6px 0;
   border-bottom: 2px solid transparent;
 }
 .nav a:hover,
@@ -114,7 +115,7 @@ a {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 19px;
   flex-wrap: wrap;
 }
 .tel {
@@ -127,7 +128,7 @@ a {
   font-weight: 500;
   border: 1px dashed var(--peach);
   border-radius: 999px;
-  padding: 0.15rem 0.8rem;
+  padding: 2px 13px;
 }
 
 /* ───────── 홈 ───────── */
