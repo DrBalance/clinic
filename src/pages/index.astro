@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import Illust from '../components/Illust.astro';
+import { site, treatmentCards } from '../data/site';
+import { getBlogPosts, fmtDate } from '../lib/naver';
+
+const herb = treatmentCards.find((c) => c.slug === 'herb');
+const recent = (await getBlogPosts(site.naverBlogId, 3)) ?? [];
+---
+
+<Base>
+  <section class="hero">
+    <div class="hero-art"><Illust name="sun" /></div>
+    <h1>
+      <img src="/brand/hero-copy.svg" alt="밸런스를 회복하면 아침이 가벼워집니다" width="722" height="250" />
+    </h1>
+    <p>{site.name} · 서울 논현동</p>
+  </section>
+
+  <div class="wrap" id="treatments">
+    <h2 class="section-label">진료 안내</h2>
+    <div class="tiles">
+      {
+        treatmentCards.filter((c) => c.slug !== 'herb').map((c) => (
+          <a class="tile" href={`/${c.slug}/`}>
+            <div class="art">
+              <Illust name={c.art} />
+            </div>
+            <span class="no">[{c.no}]</span>
+            <h3>{c.title}</h3>
+            <p>{c.desc}</p>
+          </a>
+        ))
+      }
+    </div>
+    {
+      herb && (
+        <a class="herb-strip" href="/herb/">
+          <span class="no">[{herb.no}]</span>
+          <span><strong>{herb.title}</strong> · {herb.desc}</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      )
+    }
+  </div>
+
+  {
+    recent.length > 0 && (
+      <section class="wrap recent">
+        <h2 class="section-label">최근 블로그 글</h2>
+        <ul class="posts">
+          {recent.map((p) => (
+            <li>
+              <a href={p.link} target="_blank" rel="noopener noreferrer">
+                {p.thumb && <img src={p.thumb} alt="" loading="lazy" width="160" height="160" referrerpolicy="no-referrer" />}
+                <div class="p-body">
+                  {p.category && <span class="cat">{p.category}</span>}
+                  <h2>{p.title}</h2>
+                  {p.summary && <p>{p.summary}</p>}
+                  {p.date && <time datetime={p.date.toISOString()}>{fmtDate(p.date)}</time>}
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="to-blog"><a href="/blog/">블로그 글 더 보기 →</a></p>
+      </section>
+    )
+  }
+
+  <section class="info" id="visit">
+    <div class="wrap info-grid">
+      <div>
+        <h3>오시는 길</h3>
+        <p>{site.address}</p>
+        <p>{site.station}</p>
+        <p><a href="/directions/">약도 보기 →</a></p>
+      </div>
+      <div>
+        <h3>진료시간</h3>
+        <ul>
+          {site.hours.map((h) => <li>{h.label} {h.time}{h.note && <small class="note">({h.note})</small>}</li>)}
+        </ul>
+      </div>
+      <div>
+        <h3>문의 · 예약</h3>
+        <p>
+          {
+            site.phone ? (
+              <a href={`tel:${site.phone.replace(/[^0-9]/g, '')}`}>{site.phone}</a>
+            ) : (
+              <span class="todo">전화번호 준비 중</span>
+            )
+          }
+        </p>
+        {site.bookingUrl && <p><a class="btn" href={site.bookingUrl} target="_blank" rel="noopener noreferrer">네이버 예약</a></p>}
+      </div>
+    </div>
+  </section>
+</Base>

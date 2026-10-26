@@ -1,0 +1,116 @@
+---
+// 약도 그림체(남색 손그림 선 + 살구색 포인트)에 맞춘 치료 소개 일러스트.
+// 선이 살짝 흔들리는 효과는 Base.astro 의 #wobble 필터가 만듭니다.
+interface Props {
+  name: 'moon' | 'spine' | 'bowl' | 'pot' | 'needle' | 'sun' | 'skin' | 'stomach';
+}
+const { name } = Astro.props;
+---
+
+<svg
+  class="illust"
+  viewBox="0 0 160 160"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="3.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  role="img"
+  aria-hidden="true"
+>
+  {name === 'skin' && (
+    <g>
+      <path d="M24 100C24 62 52 38 84 38C116 38 138 62 138 98C138 124 118 140 90 140C54 140 24 128 24 100Z" />
+      <circle cx="62" cy="80" r="11" fill="var(--peach)" />
+      <circle cx="98" cy="70" r="8" fill="var(--peach)" />
+      <circle cx="94" cy="108" r="12" fill="var(--peach)" />
+      <circle cx="56" cy="116" r="5" />
+      <circle cx="120" cy="92" r="4" />
+      <path d="M40 24C46 18 52 18 58 24" />
+    </g>
+  )}
+  {name === 'stomach' && (
+    <g>
+      <path d="M58 14V42C58 52 46 56 38 68C22 90 28 124 60 134C92 144 124 134 130 110C134 94 122 86 110 90C98 94 94 80 98 66C100 56 94 48 84 46C76 44 76 40 76 36V14" />
+      <path d="M130 110C140 108 148 116 150 128" />
+      <path d="M44 104C58 96 72 112 88 108C98 106 108 108 118 114C112 128 94 134 74 130C56 126 46 116 44 104Z" fill="var(--peach)" />
+      <path d="M52 78C58 74 64 74 70 78" />
+    </g>
+  )}
+  {name === 'moon' && (
+    <g>
+      <path d="M98 20C60 24 34 56 40 94C46 130 80 148 114 138C88 130 72 106 76 80C79 56 88 38 98 20Z" />
+      <path d="M122 64C132 80 138 88 138 99A16 16 0 0 1 106 99C106 88 114 80 122 64Z" fill="var(--peach)" />
+      <circle cx="128" cy="30" r="2.4" fill="currentColor" stroke="none" />
+      <circle cx="144" cy="46" r="1.8" fill="currentColor" stroke="none" />
+      <circle cx="112" cy="40" r="1.6" fill="currentColor" stroke="none" />
+    </g>
+  )}
+  {name === 'spine' && (
+    <g>
+      <rect x="50" y="14" width="60" height="24" rx="11" />
+      <rect x="46" y="46" width="68" height="26" rx="12" />
+      <rect x="56" y="80" width="48" height="20" rx="9" fill="var(--peach)" />
+      <rect x="44" y="108" width="72" height="28" rx="13" />
+      <path d="M62 142C70 150 90 150 98 142" />
+      <path d="M126 58C138 66 138 84 126 92" />
+    </g>
+  )}
+  {name === 'bowl' && (
+    <g>
+      <path d="M26 82H134C134 114 110 134 80 134C50 134 26 114 26 82Z" />
+      <path d="M44 82C46 66 62 58 80 58C98 58 114 66 116 82" fill="var(--peach)" />
+      <path d="M62 44C56 36 68 32 62 22" />
+      <path d="M82 44C76 36 88 32 82 22" />
+      <path d="M102 44C96 36 108 32 102 22" />
+      <path d="M62 146H98" />
+    </g>
+  )}
+  {name === 'pot' && (
+    <g>
+      <path d="M42 80C42 58 60 50 80 50C100 50 118 58 118 80C118 110 102 126 80 126C58 126 42 110 42 80Z" />
+      <path d="M66 50C66 40 94 40 94 50" />
+      <circle cx="80" cy="38" r="4" />
+      <path d="M118 74C130 72 138 64 142 54" />
+      <path d="M42 72C24 72 22 100 42 100" />
+      <path d="M62 134H98" />
+      <path d="M58 26C52 20 62 16 56 8" />
+      <path d="M100 26C94 20 104 16 98 8" />
+      <path d="M26 130C30 114 46 110 58 114C54 128 40 134 26 130Z" fill="var(--peach)" />
+    </g>
+  )}
+  {name === 'needle' && (
+    <g>
+      <rect x="30" y="64" width="84" height="64" rx="10" transform="rotate(-8 72 96)" fill="var(--peach)" />
+      <circle cx="72" cy="96" r="5" fill="var(--paper)" />
+      <path d="M72 96L72 96" />
+      <path d="M118 22L96 76" />
+      <path d="M114 14C120 12 126 18 124 24" />
+      <path d="M96 76L94 84" />
+      <circle cx="140" cy="110" r="2.4" fill="currentColor" stroke="none" />
+      <circle cx="132" cy="126" r="1.8" fill="currentColor" stroke="none" />
+    </g>
+  )}
+  {name === 'sun' && (
+    <g>
+      <path d="M20 112H140" />
+      <path d="M44 112A36 36 0 0 1 116 112Z" fill="var(--peach)" />
+      <path d="M80 50V36" />
+      <path d="M44 62L34 52" />
+      <path d="M116 62L126 52" />
+      <path d="M28 88L16 84" />
+      <path d="M132 88L144 84" />
+      <path d="M52 128H108" />
+    </g>
+  )}
+</svg>
+
+<style>
+  .illust {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: var(--ink);
+    filter: url(#wobble);
+  }
+</style>

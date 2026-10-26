@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="늘 연구하는 마음">
+<defs><filter id="w" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter></defs>
+<g filter="url(#w)" fill="none" stroke="#22304f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+
+<path d="M40 214H360"/>
+<path d="M96 186H254"/>
+<path d="M110 186V120C140 108 170 112 190 128V190"/><path d="M240 186V120C210 108 190 112 190 128"/>
+<path d="M130 140C150 134 168 138 180 148" stroke-width="2.4"/><path d="M130 158C150 152 168 156 180 166" stroke-width="2.4"/>
+<path d="M300 214V110L330 66"/>
+<path d="M312 54L354 58L340 96L310 90Z" fill="#f2b8a2" transform="rotate(-18 332 76)"/>
+<path d="M288 214H312"/>
+<path d="M244 56L248 40M262 70L276 62M230 72L218 62" stroke-width="2.6"/>
+</g></svg>
