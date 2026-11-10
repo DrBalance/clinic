@@ -11,6 +11,25 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const card = treatmentCards.find((c) => c.slug === entry.id);
+
+// 이 페이지에 붙은 질문과 답변을 주제별로 묶습니다 (draft 는 제외).
+const qaEntries = (await getCollection('qa', (e) => e.data.page === entry.id && !e.data.draft)).sort(
+  (a, b) => a.data.order - b.data.order || a.id.localeCompare(b.id),
+);
+const qaRendered = await Promise.all(
+  qaEntries.map(async (e) => ({
+    key: `qa-${e.id.split('/').pop()}`,
+    question: e.data.question,
+    category: e.data.category,
+    Answer: (await render(e)).Content,
+  })),
+);
+const qaGroups: { category: string; items: typeof qaRendered }[] = [];
+for (const item of qaRendered) {
+  let group = qaGroups.find((g) => g.category === item.category);
+  if (!group) qaGroups.push((group = { category: item.category, items: [] }));
+  group.items.push(item);
+}
 ---
 
 <Base title={entry.data.title} sizer>
@@ -27,9 +46,46 @@ const card = treatmentCards.find((c) => c.slug === entry.id);
 
     <div class="prose" id="prose">
       <Content />
+
+      {qaGroups.length > 0 && (
+        <section class="qa" aria-labelledby="qa-title">
+          <h2 id="qa-title" class="qa-title">자주 묻는 질문</h2>
+          {qaGroups.map((group) => (
+            <div class="qa-group">
+              <h3 class="qa-cat">{group.category}</h3>
+              {group.items.map((item) => (
+                <details class="acc" id={item.key}>
+                  <summary>
+                    <span class="acc-title">{item.question}</span>
+                    <span class="acc-mark" aria-hidden="true" />
+                  </summary>
+                  <div class="acc-body">
+                    <item.Answer />
+                  </div>
+                </details>
+              ))}
+            </div>
+          ))}
+        </section>
+      )}
     </div>
   </article>
 </Base>
+
+<script>
+  // 질문 주소(#qa-이름)로 들어오면 해당 질문을 펼쳐서 보여줍니다.
+  const openFromHash = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id.startsWith('qa-')) return;
+    const el = document.getElementById(id);
+    if (el instanceof HTMLDetailsElement) {
+      el.open = true;
+      el.scrollIntoView({ block: 'start' });
+    }
+  };
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+</script>
 
 <script>
   const btn = document.getElementById('toggle-all') as HTMLButtonElement | null;
