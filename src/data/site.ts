@@ -22,9 +22,9 @@ export const site = {
 };
 
 export const treatmentCards = [
-  { slug: 'acupuncture', no: '01', title: '침 · 테이프침', desc: '부드러운 자극이 지친 몸을 회복합니다', art: 'needle' },
-  { slug: 'digestion', no: '02', title: '소화기 장애', desc: '생각이 많은 날, 속이 먼저 반응합니다', art: 'stomach' },
-  { slug: 'sleep', no: '03', title: '불안 · 불면', desc: '결정하지 못한 마음이 밤까지 이어질 때', art: 'moon' },
+  { slug: 'acupuncture', no: '01', title: '침 · 테이프침', desc: '침을 맞고 나면 오히려 더 지치던 경험이 있는 분께', art: 'needle' },
+  { slug: 'digestion', no: '02', title: '소화기 장애', desc: '검사는 괜찮다는데 속은 계속 더부룩한 분께', art: 'stomach' },
+  { slug: 'sleep', no: '03', title: '불안 · 불면', desc: '결정하지 못한 마음에 밤마다 뒤척이는 분께', art: 'moon' },
   { slug: 'urticaria', no: '04', title: '두드러기', desc: '피부에 올라오는 몸의 신호', art: 'skin' },
   { slug: 'herb', no: '05', title: '한약', desc: '몸 전체의 균형을 보고 처방합니다', art: 'pot' },
 ] as const;
