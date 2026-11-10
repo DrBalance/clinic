@@ -391,6 +391,34 @@ details.acc[open] .acc-mark::after {
   padding: 0 0.2rem 1.4rem;
 }
 
+/* ───────── 질문과 답변 (진료 페이지 아래쪽) ───────── */
+.qa {
+  margin-top: 3.2rem;
+}
+.qa-title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  margin: 0 0 1.4rem;
+}
+.qa-group {
+  margin-bottom: 2.2rem;
+}
+.qa-cat {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin: 0 0 0.3rem;
+  letter-spacing: 0.02em;
+}
+.qa-group details.acc summary {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+.qa details.acc {
+  scroll-margin-top: 1rem;
+}
+
 /* ───────── 푸터 ───────── */
 .site-footer {
   border-top: 1px solid var(--line);
