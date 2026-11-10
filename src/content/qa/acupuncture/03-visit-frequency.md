@@ -3,6 +3,7 @@ page: acupuncture
 category: 기간과 횟수
 question: 테이프침을 쓰면 얼마나 자주 와야 하나요?
 order: 210
+draft: true
 ---
 먼저 내원해서 치료를 받은 뒤, 같은 자리에 테이프침을 며칠에 한 번씩 바꿔 붙이는 방식입니다.
 

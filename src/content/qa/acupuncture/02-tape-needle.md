@@ -3,6 +3,7 @@ page: acupuncture
 category: 침에 대해
 question: 테이프침은 어떤 침인가요?
 order: 120
+draft: true
 ---
 피부를 찌르지 않는 방식이라, 침이 부담스러운 분도 받아 보실 수 있습니다.
 
