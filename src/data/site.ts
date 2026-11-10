@@ -23,7 +23,7 @@ export const site = {
 
 export const treatmentCards = [
   { slug: 'acupuncture', no: '01', title: '침 · 테이프침', desc: '이런저런 치료를 받아도 자꾸 되돌아오는 통증이 있는 분께', art: 'needle' },
-  { slug: 'digestion', no: '02', title: '소화기 장애', desc: '검사는 괜찮다는데 속은 계속 더부룩한 분께', art: 'stomach' },
+  { slug: 'digestion', no: '02', title: '소화기 장애', desc: '발표나 중요한 미팅 전날이면 입맛이 떨어지고 속이 더부룩해지는 분께', art: 'stomach' },
   { slug: 'sleep', no: '03', title: '불안 · 불면', desc: '결정하지 못한 마음에 밤마다 뒤척이는 분께', art: 'moon' },
   { slug: 'urticaria', no: '04', title: '두드러기', desc: '피부에 올라오는 몸의 신호', art: 'skin' },
   { slug: 'herb', no: '05', title: '한약', desc: '몸 전체의 균형을 보고 처방합니다', art: 'pot' },
