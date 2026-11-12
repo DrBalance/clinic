@@ -11,7 +11,7 @@ export const site = {
   // 진료시간 (note 는 해당 줄 아래에 작게 표시)
   hours: [
     { label: '평일', time: '10:30 – 19:30', note: '점심시간 14:00 – 15:00' },
-    { label: '목요일', time: '예약진료' },
+    { label: '목요일', time: '10:30 – 16:00', note: '예약진료' },
     { label: '토요일', time: '10:30 – 14:00' },
     { label: '일 · 공휴일', time: '휴진' },
   ] as { label: string; time: string; note?: string }[],
@@ -32,9 +32,10 @@ export const site = {
 };
 
 // 검색엔진용 구조화 데이터(JSON-LD)에 쓰는 진료시간. 화면에 보이는 hours 와 같은 내용이어야 합니다.
-// 확인 필요: 목요일은 '예약진료'라 시간 정보에서 뺐고, '평일'은 월·화·수·금으로 봤습니다.
+// '평일'은 월·화·수·금으로 봤고, 목요일은 점심 없이 10:30–16:00 예약진료입니다.
 export const schemaHours = [
   { days: ['Monday', 'Tuesday', 'Wednesday', 'Friday'], ranges: [['10:30', '14:00'], ['15:00', '19:30']] },
+  { days: ['Thursday'], ranges: [['10:30', '16:00']] },
   { days: ['Saturday'], ranges: [['10:30', '14:00']] },
 ] as { days: string[]; ranges: string[][] }[];
 
