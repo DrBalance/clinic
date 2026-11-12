@@ -19,7 +19,24 @@ export const site = {
   bookingUrl: 'https://booking.naver.com/booking/16/bizes/1764585',
   // 네이버 블로그 (RSS 로 글 목록을 가져옵니다)
   naverBlogId: 'drbalance',
+
+  // 사이트 주소 (astro.config.mjs 의 site 와 같아야 합니다)
+  url: 'https://morningnara.com',
+  // 검색엔진에 보이는 한 줄 소개 (질환 효과 표현 없이 위치와 진료 분야만)
+  summary:
+    '서울 강남구 논현동 학동역 7번 출구 근처의 한의원입니다. 침·테이프침, 소화기 장애, 불안·불면, 두드러기, 한약 진료 방식을 설명합니다.',
+  // 검색엔진 소유 확인 코드. 네이버 서치어드바이저·구글 서치콘솔에서 받은 content 값만 넣으면 메타 태그가 생깁니다.
+  // (비워 두면 태그를 넣지 않습니다. 파일 업로드 방식으로 확인했다면 비워 둬도 됩니다.)
+  naverSiteVerification: '',
+  googleSiteVerification: '',
 };
+
+// 검색엔진용 구조화 데이터(JSON-LD)에 쓰는 진료시간. 화면에 보이는 hours 와 같은 내용이어야 합니다.
+// 확인 필요: 목요일은 '예약진료'라 시간 정보에서 뺐고, '평일'은 월·화·수·금으로 봤습니다.
+export const schemaHours = [
+  { days: ['Monday', 'Tuesday', 'Wednesday', 'Friday'], ranges: [['10:30', '14:00'], ['15:00', '19:30']] },
+  { days: ['Saturday'], ranges: [['10:30', '14:00']] },
+] as { days: string[]; ranges: string[][] }[];
 
 export const treatmentCards = [
   { slug: 'acupuncture', no: '01', title: '침 · 테이프침', desc: '이런저런 치료를 받아도 자꾸 되돌아오는 통증이 있는 분께', art: 'needle' },

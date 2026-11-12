@@ -7,6 +7,7 @@ const treatments = defineCollection({
   schema: z.object({
     title: z.string(),
     subtitle: z.string().optional(),
+    description: z.string().optional(), // 검색 결과·공유 미리보기에 보이는 소개 문구 (없으면 subtitle)
     order: z.number(),
     legacyImage: z.string().optional(),
   }),

@@ -1,12 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
+import { clinicJsonLd, breadcrumbJsonLd } from '../lib/seo';
 
 const q = encodeURIComponent(site.address.replace('서울 ', '서울 '));
 const naver = `https://map.naver.com/p/search/${q}`;
 ---
 
-<Base title="오시는 길" description={`${site.name} 오시는 길 · ${site.address}`}>
+<Base
+  title="오시는 길"
+  description={`${site.name} 오시는 길 · ${site.address} · ${site.station}에서 걸어서 오실 수 있습니다.`}
+  jsonLd={[clinicJsonLd(), breadcrumbJsonLd([{ name: '홈', path: '/' }, { name: '오시는 길', path: '/directions/' }])]}
+>
   <article class="doc">
     <header class="doc-head">
       <h1>오시는 길</h1>

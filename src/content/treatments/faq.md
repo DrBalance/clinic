@@ -1,5 +1,6 @@
 ---
 title: "자주 묻는 질문"
+description: "한약과 진료에 대해 환자분들이 자주 묻는 질문과 답을 아침나라한의원 원장이 정리했습니다."
 order: 6
 legacyImage: "/image/herb_qna.png"
 ---

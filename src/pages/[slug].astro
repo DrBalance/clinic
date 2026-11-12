@@ -1,7 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { treatmentCards } from '../data/site';
+import { treatmentCards, site } from '../data/site';
+import { breadcrumbJsonLd, faqJsonLd, faqFromHeadings, plainText } from '../lib/seo';
 
 export async function getStaticPaths() {
   const entries = await getCollection('treatments');
@@ -30,9 +31,23 @@ for (const item of qaRendered) {
   if (!group) qaGroups.push((group = { category: item.category, items: [] }));
   group.items.push(item);
 }
+
+// 검색엔진·AI 검색용 데이터: 화면에 실제로 보이는 질문과 답만 담습니다.
+const faqItems =
+  entry.id === 'faq'
+    ? faqFromHeadings(entry.body ?? '')
+    : qaEntries.map((e) => ({ question: e.data.question, answer: plainText(e.body ?? '') }));
+const jsonLd = [
+  breadcrumbJsonLd([
+    { name: '홈', path: '/' },
+    { name: entry.data.title, path: `/${entry.id}/` },
+  ]),
+  faqJsonLd(faqItems),
+];
+const description = entry.data.description ?? entry.data.subtitle ?? site.summary;
 ---
 
-<Base title={entry.data.title} sizer>
+<Base title={entry.data.title} description={description} jsonLd={jsonLd} sizer>
   <article class="doc">
     <header class="doc-head">
       {card && <span class="no">[{card.no}]</span>}

@@ -1,0 +1,17 @@
+# 아침나라한의원 — 모든 검색엔진과 AI 검색 서비스의 수집을 허용합니다.
+User-agent: *
+Allow: /
+
+# 네이버 검색 로봇
+User-agent: Yeti
+Allow: /
+
+# AI 검색·답변 서비스 (명시적으로 허용)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://morningnara.com/sitemap-index.xml

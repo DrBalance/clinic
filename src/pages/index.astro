@@ -3,12 +3,13 @@ import Base from '../layouts/Base.astro';
 import Illust from '../components/Illust.astro';
 import { site, treatmentCards } from '../data/site';
 import { getBlogPosts, fmtDate } from '../lib/naver';
+import { clinicJsonLd } from '../lib/seo';
 
 const herb = treatmentCards.find((c) => c.slug === 'herb');
 const recent = (await getBlogPosts(site.naverBlogId, 3)) ?? [];
 ---
 
-<Base>
+<Base jsonLd={[clinicJsonLd()]}>
   <section class="hero">
     <div class="hero-art"><Illust name="sun" /></div>
     <h1>
